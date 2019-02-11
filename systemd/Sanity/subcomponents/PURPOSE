@@ -1,0 +1,8 @@
+PURPOSE of /CoreOS/systemd/Sanity/subcomponents
+Description: Check functionality of various systemd subcomponents.
+Author: Frantisek Sumsal <fsumsal@redhat.com>
+Bugzilla:
+    https://bugzilla.redhat.com/show_bug.cgi?id=1268336
+    https://bugzilla.redhat.com/show_bug.cgi?id=1365556
+    https://bugzilla.redhat.com/show_bug.cgi?id=1339721
+    https://bugzilla.redhat.com/show_bug.cgi?id=1354410

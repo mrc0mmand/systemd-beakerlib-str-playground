@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  tags:
+  - classic
+  roles:
+  - role: standard-test-beakerlib
+    tests:
+    - cmd-line-options
