@@ -39,7 +39,7 @@ rlJournalStart
         rlRun "pushd $TmpDir"
         rlImport systemd/basic
     rlPhaseEnd
-
+if false; then
     rlPhaseStartTest "systemd-analyze set-log-level segfault [BZ#1268336]"
         rlRun "systemd-analyze set-log-level" 1
     rlPhaseEnd
@@ -223,7 +223,7 @@ EOF
         rlRun "systemctl stop proc-sys-fs-binfmt_misc.mount"
         rlRun "timeout -s 9 --foreground 10s unshare -m ls -la /proc/sys/fs/binfmt_misc" 0,2
     rlPhaseEnd
-
+fi
     rlPhaseStartCleanup
         rlRun "popd"
         rlRun "rm -r $TmpDir" 0 "Removing tmp directory"
