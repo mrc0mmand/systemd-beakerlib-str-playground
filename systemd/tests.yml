@@ -1,7 +1,9 @@
 ---
 - hosts: localhost
+  vars:
+    default_fmf_filter: "tags: .*"
   tags:
-  - classic
+    - classic
   roles:
-  - role: standard-test-beakerlib
-    fmf_filter: "tags: sanity"
+    - role: standard-test-beakerlib
+      fmf_filter: "{{ default_fmf_filter }}"
