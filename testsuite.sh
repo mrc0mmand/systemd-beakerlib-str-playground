@@ -18,4 +18,4 @@ if [[ -e $TEST_ARTIFACTS ]]; then
 fi
 
 export TEST_ARTIFACTS
-ansible-playbook $ANSIBLE_ARGS systemd/tests.yml
+ansible-playbook "$ANSIBLE_ARGS" systemd/tests.yml
