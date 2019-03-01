@@ -4,5 +4,4 @@
   - classic
   roles:
   - role: standard-test-beakerlib
-    tests:
-    - Sanity
+    fmf_filter: "tags: sanity"
