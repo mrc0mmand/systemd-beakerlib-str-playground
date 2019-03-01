@@ -3,10 +3,7 @@
 set -e
 
 # STR copies tests over to /var/str which breaks the internal Beakerlib library
-# lookup. Let's workaround it.
-BEAKERLIB_LIB_BASE="/usr/share/beakerlib-libraries"
-[ ! -d "$BEAKERLIB_LIB_BASE" ] && mkdir -p "$BEAKERLIB_LIB_BASE"
-mkdir "$BEAKERLIB_LIB_BASE/systemd"
-
+# lookup. Let's workaround it by explicitly setting where it should look for
+# the libraries.
 TEST_REPO_ROOT="$(dirname $(readlink -f "$0"))"
-ln -s "$TEST_REPO_ROOT/systemd/Library" "$BEAKERLIB_LIB_BASE/systemd/Library"
+export BEAKERLIB_LIBRARY_PATH="$TEST_REPO_ROOT"
