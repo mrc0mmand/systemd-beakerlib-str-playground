@@ -4,11 +4,11 @@ set -e
 
 . "$(dirname "$0")/setup-env.sh"
 
-ANSIBLE_ARGS="${ANSIBLE_ARGS:-}"
+ANSIBLE_ARGS=()
 TEST_ARTIFACTS="${TEST_ARTIFACTS:-$PWD/artifacts-$(date --iso=minutes)}"
 
 if [[ ! -z $1 ]]; then
-    ANSIBLE_ARGS+="-e \"fmf_filter='$1'\""
+    ANSIBLE_ARGS+=(--extra-vars="fmf_filter='$1'")
 fi
 
 # Cleanup artifact directories, so we get the most relevant test results
@@ -18,4 +18,4 @@ if [[ -e $TEST_ARTIFACTS ]]; then
 fi
 
 export TEST_ARTIFACTS
-ansible-playbook "$ANSIBLE_ARGS" systemd/tests.yml
+ansible-playbook "${ANSIBLE_ARGS[@]}" systemd/tests.yml
