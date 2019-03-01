@@ -9,4 +9,4 @@ BEAKERLIB_LIB_BASE="/usr/share/beakerlib-libraries"
 mkdir "$BEAKERLIB_LIB_BASE/systemd"
 
 TEST_REPO_ROOT="$(dirname $(readlink -f "$0"))"
-ln -s "$TEST_REPO_ROOT/systemd/Library" "$BEAKERLIB_LIB_BASE/Library"
+ln -s "$TEST_REPO_ROOT/systemd/Library" "$BEAKERLIB_LIB_BASE/systemd/Library"
